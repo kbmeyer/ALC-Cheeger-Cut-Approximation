@@ -35,9 +35,9 @@ The experimental programme assesses:
 - robustness under perturbations/noise and stability of the resulting eigenvectors;
 - the effect of **rank specification** (number of eigenvectors used) on clustering outcomes.
 
-## Repository status
+## Repository contents
 
-The codebase is being consolidated from exploratory notebooks into reproducible Python modules and scripts suitable for a research-grade repository. Notebooks may be retained for transparency, but the intended interface is via functional `.py` code for end-to-end reproducibility.
+
 
 ## References
 
@@ -46,10 +46,3 @@ The codebase is being consolidated from exploratory notebooks into reproducible 
 - Ng, A. Y., Jordan, M. I., & Weiss, Y. (2002). *On spectral clustering: Analysis and an algorithm*.
 - Yelibi, L., & Gebbie, T. (2021). *Agglomerative Likelihood Clustering (ALC)*.
 
-## Citation
-
-If you use or build on this work, please cite the associated MSc dissertation and the references above. (A `CITATION.cff` file can be added once the dissertation citation details are finalised.)
-
-## Licence
-
-A licence file will be added at the repository root (e.g. MIT or BSD-3-Clause), depending on institutional and dissemination requirements.
