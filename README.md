@@ -59,7 +59,7 @@ This repository contains the minimal Python code required to reproduce the exper
   - `run_spectral_rank_proxy.py` — rank / embedding-dimension experiments (proxy/overspecification regime).
   - `run_eigenvector_stability.py` — eigenvector stability and alignment experiments.
   - `run_raw_alc.py` — ALC runs without spectral preprocessing (where applicable).
-  - `run_smoke_test_all.py` — convenience script to validate the pipeline end-to-end.
+  - `run_smoke_test_all.py` — convenience script to validate the core experiments (baseline and noise perturbation) pipeline end-to-end.
 
 - **`utils/`**  
   Shared utilities for reproducibility and evaluation:
