@@ -35,8 +35,41 @@ The experimental programme assesses:
 - robustness under perturbations/noise and stability of the resulting eigenvectors;
 - the effect of **rank specification** (number of eigenvectors used) on clustering outcomes.
 
-## Repository contents
+## Repository purpose and structure
 
+This repository contains the minimal Python code required to reproduce the experiments, figures, and summary metrics reported in the accompanying mini-dissertation. The codebase is organised to separate (i) clustering methods, (ii) synthetic data generation, (iii) experiment runners, and (iv) shared utilities.
+
+### Directory overview
+
+- **`clustering/`**  
+  Core clustering implementations used throughout the dissertation:
+  - `alc.py` — Agglomerative Likelihood Clustering (ALC) implementation.
+  - `kmeans.py` — K-means baseline.
+  - `spectral.py` — Spectral clustering routines (including Laplacian construction / embedding steps as used in the experiments).
+
+- **`data/`**  
+  Synthetic dataset construction:
+  - `generators.py` — dataset generators used to produce the benchmark datasets referenced in the experimental chapters.
+
+- **`experiments/`**  
+  Reproducible experiment entry points and shared experiment scaffolding:
+  - `base.py`, `common.py` — shared configuration, runners, and helper logic used across experiments.
+  - `run_spectral_baseline_sigma.py` — baseline spectral clustering across kernel bandwidths.
+  - `run_spectral_noise_perturb.py` — noise-perturbation experiments.
+  - `run_spectral_rank_proxy.py` — rank / embedding-dimension experiments (proxy/overspecification regime).
+  - `run_eigenvector_stability.py` — eigenvector stability and alignment experiments.
+  - `run_raw_alc.py` — ALC runs without spectral preprocessing (where applicable).
+  - `run_smoke_test_all.py` — convenience script to validate the pipeline end-to-end.
+
+- **`utils/`**  
+  Shared utilities for reproducibility and evaluation:
+  - `io.py` — loading/saving results and artefacts.
+  - `metrics.py` — evaluation metrics (e.g., ARI, silhouette, and related summaries).
+  - `seed.py` — seed control and reproducibility helpers.
+
+### Reproducibility note
+
+The experiment scripts under `experiments/` are intended to be the primary entry points for reproducing dissertation results. Each script executes a defined experimental loop (e.g., over seeds, noise levels, Laplacian variants, or bandwidth parameters) and outputs the corresponding results used in downstream analysis and plotting.
 
 
 ## References
