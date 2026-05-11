@@ -1,6 +1,28 @@
 from sklearn.datasets import make_blobs, make_moons
 import numpy as np
 
+
+def add_gaussian_noise(X, noise_std=0.1, seed=None):
+    """
+    Add i.i.dGaussian noise to the data arraywith a fixed random seed.
+
+    Parameters
+    ----------
+    X : ndarray of shape (n_samples, n_features)
+        Original data points.
+    noise_std : float
+        Standard deviation of the Gaussian noise.
+    seed : int
+        Random seed for reproducibility / Monte Carlo resampling.
+
+    Returns
+    -------
+    X_noisy : ndarray of shape (n_samples, n_features)
+        Data with added Gaussian noise.
+    """
+    rng = np.random.default_rng(seed)
+    return X + rng.normal(0, noise_std, X.shape)
+
 # ---------------- Rings generator ----------------
 def make_rings(n_points=1200, n_circles=3, noise_std=0.1, seed=0):
     """
